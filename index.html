@@ -119,12 +119,16 @@
     <input type="color" class="form-control w-25" id="colorInp">
     <div id="mycalc2" class="w-50"></div>
 </div>
+  <input type="color" name="" id="colors" onchange="setColor()">
+<canvas id="canvas" width="500" height="200" style="border:2px solid black ;margin-left: 50px;">
+
+</canvas>
    <!-- <div><button class="btn w-100" id="mybtn" onclick="change()">CLick me</button></div> -->
    <script src="/js/calc.js" ></script>
    <script>
   
     // new Calculator2('#mycalc','#colorInp');
-    new Calculator2('#mycalc2','#colorInp');
+   // new Calculator2('#mycalc2','#colorInp');
    </script>
  </body>
  </html>
@@ -133,6 +137,62 @@
    let {
      log
    } = console;
+
+  //  let ca=canvas.getContext('2d')
+  //  ca.arc(50,50,50,50)
+  //  ca.stroke()
+
+// class Canvas{
+  x=''
+  y=''
+  color='black'
+  c=document.getElementById('canvas');
+  constructor(){
+    this.c=this.c.getContext('2d');
+  }
+
+  setCordinates(x,y){
+    this.x=x
+    this.y=y
+  }
+
+  draw(){
+    this.c.beginPath();
+    
+    this.c.strokeStyle=document.getElementById('colors').value
+    this.c.moveTo(this.x,this.y)
+this.c.lineTo(this.endX,this.endY)
+this.c.stroke()
+  }
+
+  setEnd(x,y){
+    this.endX=x
+    this.endY=y
+  }
+
+  setColor(color){
+    this.color=color
+  }
+}
+let canva=[];
+let i=0;
+  
+//    canvas.addEventListener('mousedown',function(e){
+//     i++
+//     canva[i]=new Canvas()
+
+//     canva[i].setCordinates(e.offsetX,e.offsetY)
+
+//    })
+
+//    canvas.addEventListener('mouseup',function(e){
+//    canva[i].setEnd(e.offsetX,e.offsetY)
+
+//   canva[i].draw()
+//    })
+
+// let setColor=()=>canva[i].setColor(document.getElementById('colors').value)
+
 
    let senetnces = ['MY name is Teslim Salaudeen', 'I study software engineering at SQI', 'My instructor is Dev Teslim']
 

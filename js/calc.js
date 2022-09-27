@@ -52,11 +52,9 @@ class Calculator{
   }
     
     showNumbers(numbers){
-<<<<<<< HEAD
         
-=======
         console.log(this.finalAns);
->>>>>>> c9be575071f8d0202c08b026e3b13098c3b5cdd3
+c9be575071f8d0202c08b026e3b13098c3b5cdd3
        let screenVal=this.screen.value
        let last=screenVal[screenVal.length-1]
         if (this.operators.indexOf(numbers)>=0 && this.operators.indexOf(last)>=0) {
